@@ -1,0 +1,4 @@
+.env
+myenv/
+**/*.pycz
+**/__pycache__
