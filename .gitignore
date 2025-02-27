@@ -3,4 +3,4 @@ myenv/
 **/*.pycz
 **/__pycache__
 *.code-workspace
-db.sqlite3
+recipebook/db.sqlite3
