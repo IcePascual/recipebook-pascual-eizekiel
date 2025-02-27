@@ -18,9 +18,3 @@ def recipe(request, pk):
     recipe = Recipe.objects.get(pk)
     ctx = {'recipe': recipe}
     return render(request, 'ledger/recipe.html', ctx)
-
-
-def ingredient(request, pk):
-    ingredient = Ingredient.objects.get(pk)
-    ctx = {'ingredient': ingredient}
-    return render(request, 'ledger/ingredient.html', ctx)
