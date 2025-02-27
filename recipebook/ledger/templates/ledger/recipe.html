@@ -5,8 +5,8 @@
 {% block content %}
     {{ name }}
     <ul>
-        {% for item in ingredients %}
-        <li>{{ item.quantity }} of {{ item.name }}</li>
+        {% for ingredient in object.ingredients.all %}
+        <li>{{ ingredient.quantity }} of {{ ingredient.ingredient.name }}</li>
         {% endfor %}
     </ul>
 {% endblock %}
