@@ -19,11 +19,14 @@ class Profile(models.Model):
     username = models.CharField(max_length=50)
     bio = models.TextField(max_length=255)
 
+    def __str__(self):
+        return self.username
+
 
 class Recipe(models.Model):
     name = models.CharField(max_length=100)
     author = models.ForeignKey(
-        Profile, 
+        Profile,
         on_delete=models.SET_NULL,
         null=True)
     created_on = models.DateField(auto_now_add=True)
