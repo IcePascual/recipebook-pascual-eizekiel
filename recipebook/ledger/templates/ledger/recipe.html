@@ -3,10 +3,12 @@
 {% block title %}Recipe Book{% endblock %}
 
 {% block content %}
-    {{ name }}
-    <ul>
-        {% for ingredient in object.ingredients.all %}
-        <li>{{ ingredient.quantity }} of {{ ingredient.ingredient.name }}</li>
-        {% endfor %}
-    </ul>
+    {% if request.user.is_authenticated %}
+        <h2>{{ object.name }} by {{ object.author.username }}</h2>
+        <ul>
+            {% for ingredient in object.ingredients.all %}
+            <li>{{ ingredient.quantity }} of {{ ingredient.ingredient.name }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
 {% endblock %}
