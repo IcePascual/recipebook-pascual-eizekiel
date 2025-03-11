@@ -7,17 +7,17 @@
         {% block styles %}{% endblock %}
     </head>
     <h1>{% block header %}Recipe Book{% endblock %}</h1>
-    <h2>{% block pagetitle %}{% endblock %}</h2>
     <body>
         {% if request.user.is_authenticated %}
-            <h3> Logged in as {{ request.user.username }} <h3>
+        <h3> Logged in as {{ request.user.username }} <h3>
             <form method="POST" action="{% url 'logout' %}">
                 {% csrf_token %}
                 <button type="submit">Logout</button>
             </form>
-        {% else %}
+            {% else %}
             <a href="{% url 'login' %}">Login</a>        
         {% endif %}
+        <h2>{% block pagetitle %}{% endblock %}</h2>
         {% block content %}{% endblock %}
     </body>
 </html>
