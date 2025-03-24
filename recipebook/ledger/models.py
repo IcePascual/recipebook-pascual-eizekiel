@@ -43,7 +43,7 @@ class RecipeIngredient(models.Model):
         on_delete=models.SET_NULL,
         null=True,
         related_name='ingredients')
-    
+
 
 class RecipeImage(models.Model):
     image = models.ImageField(upload_to='images/', null=True)
