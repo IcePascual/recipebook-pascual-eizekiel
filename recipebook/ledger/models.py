@@ -1,6 +1,7 @@
-from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
+
+from useraccounts.models import Profile
 
 
 # Create your models here.
@@ -12,15 +13,6 @@ class Ingredient(models.Model):
 
     def get_absolute_url(self):
         return reverse('ledger:ingredient', kwargs={'pk': self.pk})
-
-
-class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    username = models.CharField(max_length=50)
-    bio = models.TextField(max_length=255)
-
-    def __str__(self):
-        return self.username
 
 
 class Recipe(models.Model):
