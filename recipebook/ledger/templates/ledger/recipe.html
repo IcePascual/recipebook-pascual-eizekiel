@@ -9,6 +9,7 @@
         {% for image in object.images.all %}
             <img src="{{ image.image.url }}" alt="{{ image.description }}">
         {% endfor %}
+        <a href="{% url 'ledger:recipe_add_image' object.pk %}">Add Image</a>
         <ul>
             {% for ingredient in object.ingredients.all %}
             <li>{{ ingredient.quantity }} of {{ ingredient.ingredient.name }}</li>
