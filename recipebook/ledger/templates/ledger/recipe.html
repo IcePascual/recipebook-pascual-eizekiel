@@ -6,6 +6,9 @@
 {% block content %}
     {% if request.user.is_authenticated %}
         <h2>{{ object.name }} by {{ object.author.username }}</h2>
+        {% for image in object.images.all %}
+            <img src="{{ image.image.url }}" alt="{{ image.description }}">
+        {% endfor %}
         <ul>
             {% for ingredient in object.ingredients.all %}
             <li>{{ ingredient.quantity }} of {{ ingredient.ingredient.name }}</li>

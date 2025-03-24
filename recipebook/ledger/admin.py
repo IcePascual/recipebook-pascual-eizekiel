@@ -16,7 +16,7 @@ class RecipeAdmin(admin.ModelAdmin):
     model = Recipe
     inlines = [
         IngredientInline,
-        RecipeImage]
+        ImageInline]
 
 
 admin.site.register(Recipe, RecipeAdmin)
